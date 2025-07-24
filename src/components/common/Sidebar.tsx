@@ -1,13 +1,15 @@
 import {
     ChartPieIcon,
     Cog6ToothIcon,
-    DevicePhoneMobileIcon,
+    // DevicePhoneMobileIcon,
     HomeIcon,
     ShoppingBagIcon,
     ShoppingCartIcon,
 } from '@heroicons/react/24/outline'
 import logo from '../../assets/dashlogo.png';
 import { Link } from 'react-router-dom';
+import { WrenchScrewdriverIcon } from '@heroicons/react/16/solid';
+import { UserCircleIcon } from '@heroicons/react/20/solid';
 // import {getUser} from "../../utils/constants.ts";
 // import {useState} from "react";
 
@@ -18,8 +20,8 @@ const navigation = [
     // { name: 'Apps', href: '/apps', icon: DevicePhoneMobileIcon, current: false },
     { name: 'Statistics', href: '/stats', icon: ChartPieIcon, current: false },
     { name: 'Market place', href: '/market', icon: ChartPieIcon, current: false },
-    { name: 'My Services', href: '/myservices', icon: ChartPieIcon, current: false },
-    { name: 'Users', href: '/users', icon: ChartPieIcon, current: false },  
+    { name: 'My Services', href: '/myservices', icon: WrenchScrewdriverIcon, current: false },
+    { name: 'Users', href: '/users', icon: UserCircleIcon, current: false },  
 ]
 
 function classNames(...classes: string[]) {

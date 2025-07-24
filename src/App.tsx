@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Login from './components/auth/Login';
+// import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import ValidatePassword from './components/auth/ValidatePassword';
 import ForgotPassword from './components/auth/ForgotPassword';
@@ -9,7 +9,6 @@ import Landing from './components/dashboard/Landing';
 import Profile from './components/dashboard/user/Profile';
 import Statistics from './components/dashboard/stats/Statistics';
 import Team from './components/dashboard/user/Team';
-import Index from './components/dashboard/Apps';
 import Market from './components/dashboard/marketplace/Market';
 import Settings from './components/dashboard/Settings/Settings';
 import Forbidden from './components/error/forbidden';
