@@ -1,0 +1,33 @@
+name: Run Dashboard Version
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-dashboard-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install sshpass
+        run: sudo apt-get install -yy sshpass
+
+      - name: ssh into server and update dashboard
+        env:
+          SSH_PASSWORD: ${{secrets.SSH_PASSWORD}}
+          HOSTNAME: ${{secrets.HOSTNAME}}
+          USERNAME: ${{secrets.USERNAME}}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no ${USERNAME}@${HOSTNAME} '
+            cd /root/studio && \
+            rm -rf dlmp-users && \
+            git clone https://Eleli-Ayub:${{ secrets.TOKEN }}@github.com/panache-dlmp/dlmp-users.git && \
+            cd dlmp-users && \
+            sudo docker stop dlmp-dashboard || true && \
+            sudo docker rm dlmp-dashboard || true && \
+            sudo docker rmi dlmp-dashboard || true && \
+            sudo docker build -t dlmp-dashboard . && \
+            sudo docker run --name dlmp-dashboard -d -p 4000:4000 dlmp-dashboard'
