@@ -17,6 +17,7 @@ import ServiceProviderForm from './components/common/serviceProviders/servicepro
 import Shop from './components/dashboard/Shop/Shop';
 // import {Myservices} from "./components/dashboard/marketplace/myservices/servicesData.tsx";
 import MyServicesList from "./components/dashboard/marketplace/myservices/myservices.tsx";
+import Login from './components/auth/Login.tsx';
 // import UpDateServiceModal from './components/dashboard/marketplace/bidsForm';
 // import UpDateServiceModal from './components/dashboard/marketplace/bidsForm';
 // import BidsForm from './components/dashboard/marketplace/bidsForm';
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/authenticate" element={<ValidatePassword />} />
+         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/reset" element={<ForgotPassword />} />
         <Route path="/validateotp" element={<ValidateOtp />} />dashboard
@@ -41,8 +43,6 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/forbidden" element={<Forbidden />} />
         <Route path="/serviceProviderForm" element={<ServiceProviderForm />} />
-
-        {/* <Route path="/bidsForm" element={<UpDateServiceModal />}/> */}
       </Routes>
     </Router>
   );
